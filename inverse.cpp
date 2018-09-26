@@ -1,10 +1,9 @@
-//#include <conio>
+
 #include <iostream>
 #include <math.h>
 #include <vector>
 using namespace std;
-//----------------------------------------------------------
-//read matrix : cin>> in c++ , scanf() in c
+
 
 //-----------------------------------------------------
 // show matrix : cout<< in c++ , printf() in c
@@ -155,9 +154,11 @@ int main(void){
 
 
     int n;
+    cout<<"enter the order of input matrix"<<endl;
     cin>>n;
     vector<vector<float> > a,d;
-
+    cout<<"enter elements of the matrix"<<endl;
+    
     for(int i=0;i<n;i++){
         vector<float> temp;
         for(int j=0;j<n;j++){
@@ -182,29 +183,16 @@ int main(void){
         }
         d.push_back(temp);
     }
+    
     int print_matrix = 1;
     printf(a,n,print_matrix);
+    
     double deter = (float) det(a,n);
     cout<<deter<<endl;
+    
     inverse(a,d,n,deter);
+    
     int print_inverse = 2;
     printf(d,n,print_inverse);
-    /*
-    float a[100][100],d[100][100],deter;
-    cout<<"\n C++ Program To Find Inverse Of Matrix\n\n"; 
-    n = scanf(a);   // read function
-    int print_matrix = 1;
-    printf(a,n,print_matrix);   // read function
-    deter = (float) det(a,n);   // read function
-        cout<<"----------------------------------------------------\n";
-        cout<<"\n\n Determinant of the Matrix : "<<deter;
-        cout<<"\n\n-----------------------\n";
-    inverse(&a,&d,n,deter);   // read function
-    int print_inverse = 2;
-    printf(d,n,print_inverse);  // read function
-        cout<<"\n\n==============================* THE END *==============================\n";
-        cout<<"\n       **** Thanks For Using The Program!!! ****\n";
-getch();
-    return 0;
-    */
+    
 }// end main
